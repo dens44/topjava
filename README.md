@@ -1,5 +1,8 @@
 Java Enterprise Online Project 
 ===============================
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2bf6484dc3b047358eefa54097d2a13d)](https://app.codacy.com/manual/dens44/topjava?utm_source=github.com&utm_medium=referral&utm_content=dens44/topjava&utm_campaign=Badge_Grade_Settings)
+
 Разработка полнофункционального Spring/JPA Enterprise приложения c авторизацией и правами доступа на основе ролей с использованием наиболее популярных инструментов и технологий Java: Maven, Spring MVC, Security, JPA(Hibernate), REST(Jackson), Bootstrap (css,js), datatables, jQuery + plugins, Java 8 Stream and Time API и хранением в базах данных Postgresql и HSQLDB.
 
 ![topjava_structure](https://user-images.githubusercontent.com/13649199/27433714-8294e6fe-575e-11e7-9c41-7f6e16c5ebe5.jpg)
@@ -111,14 +114,14 @@ Java Enterprise Online Project
    - [Сергей Куксенко — Stream API, часть 2](https://www.youtube.com/watch?v=i0Jr2l3jrDA)
 
 ### Optional 2 (+5 бонусов)
-```
 Сделать реализацию со сложностью O(N) (обратите внимание на п.13 замечаний):
-- циклом за 1 проход по List<UserMeal>
+- циклом за 1 проход по `List<UserMeal>`
   - без создания копий списка (в том числе модифицированных) и без дополнительных проходов по частям списка
-- через Stream API за 1 проход по исходному списку Stream<UserMeal> meals
+- через Stream API за 1 проход по исходному списку `meals.streem()`
+  - нельзя использовать внешние коллекции, не являющиеся частью коллектора или 2 раза проходить по исходному списку (его копиям).
+    Т.е. в решении не должно быть 2 раза `meal.stream()` (в том числе неявно, в составных коллекторах)
   - возможно дополнительные проходы по частям списка
-  - нельзя использовать внешние коллекции, не являющиеся частью коллектора или результатами работы stream
-```
+
 ### Замечания по использованию Stream API:
 - Когда встречаешь что-то непривычное, приходится перестраивать мозги. Например, переход с процедурного на ООП программирование дается непросто. Те, кто не знает шаблонов (и не хотят учить) также их встречают плохо. Хорошая новость в том, что если это принять и начать использовать, то начинаешь получать от этого удовольствие. И тут главное не впасть в другую крайность:
   - [Используйте Stream API проще (или не используйте вообще)](https://habrahabr.ru/post/337350/)
